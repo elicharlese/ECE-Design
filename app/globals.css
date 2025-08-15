@@ -1,0 +1,200 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Refined Apple-inspired design tokens with more subtle colors */
+  --background: oklch(1 0 0); /* Pure white */
+  --foreground: oklch(0.15 0 0); /* Very dark gray for better contrast */
+  --card: oklch(0.99 0 0); /* Slightly off-white */
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.45 0.12 212); /* Apple-like blue */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.96 0.01 106); /* Very subtle gray */
+  --secondary-foreground: oklch(0.15 0 0);
+  --muted: oklch(0.97 0.01 106);
+  --muted-foreground: oklch(0.45 0.01 106);
+  /* Updated accent to use lighter blue instead of orange */
+  --accent: oklch(0.6 0.12 220); /* Light blue accent */
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.55 0.15 27); /* Apple red */
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.92 0.01 106); /* Very subtle border */
+  --input: oklch(0.98 0.01 106);
+  --ring: oklch(0.45 0.12 212 / 0.3); /* Subtle focus ring */
+  /* Updated chart colors to use blue variations */
+  --chart-1: oklch(0.45 0.12 212); /* Primary blue */
+  --chart-2: oklch(0.6 0.12 220); /* Light blue */
+  --chart-3: oklch(0.35 0.15 200); /* Dark blue */
+  --chart-4: oklch(0.7 0.08 230); /* Very light blue */
+  --chart-5: oklch(0.5 0.1 210); /* Medium blue */
+  --radius: 0.75rem; /* Apple's preferred radius */
+  --sidebar: oklch(0.98 0.005 106);
+  --sidebar-foreground: oklch(0.15 0 0);
+  --sidebar-primary: oklch(0.45 0.12 212);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.96 0.01 106);
+  --sidebar-accent-foreground: oklch(0.15 0 0);
+  --sidebar-border: oklch(0.9 0.01 106);
+  --sidebar-ring: oklch(0.45 0.12 212 / 0.3);
+}
+
+.dark {
+  /* Refined dark mode to match Apple's dark aesthetic */
+  --background: oklch(0.05 0 0);
+  --foreground: oklch(0.95 0.01 106);
+  --card: oklch(0.08 0 0);
+  --card-foreground: oklch(0.95 0.01 106);
+  --popover: oklch(0.05 0 0);
+  --popover-foreground: oklch(0.95 0.01 106);
+  --primary: oklch(0.55 0.12 212);
+  --primary-foreground: oklch(0.05 0 0);
+  --secondary: oklch(0.12 0.01 106);
+  --secondary-foreground: oklch(0.95 0.01 106);
+  --muted: oklch(0.1 0.01 106);
+  --muted-foreground: oklch(0.6 0.01 106);
+  /* Updated dark mode accent to use lighter blue */
+  --accent: oklch(0.7 0.12 220);
+  --accent-foreground: oklch(0.05 0 0);
+  --destructive: oklch(0.6 0.15 27);
+  --destructive-foreground: oklch(0.95 0.01 106);
+  --border: oklch(0.15 0.01 106);
+  --input: oklch(0.08 0.01 106);
+  --ring: oklch(0.55 0.12 212 / 0.3);
+  /* Updated dark mode chart colors to blue variations */
+  --chart-1: oklch(0.55 0.12 212);
+  --chart-2: oklch(0.7 0.12 220);
+  --chart-3: oklch(0.45 0.15 200);
+  --chart-4: oklch(0.8 0.08 230);
+  --chart-5: oklch(0.6 0.1 210);
+  --sidebar: oklch(0.06 0.005 106);
+  --sidebar-foreground: oklch(0.95 0.01 106);
+  --sidebar-primary: oklch(0.55 0.12 212);
+  --sidebar-primary-foreground: oklch(0.05 0 0);
+  --sidebar-accent: oklch(0.12 0.01 106);
+  --sidebar-accent-foreground: oklch(0.95 0.01 106);
+  --sidebar-border: oklch(0.15 0.01 106);
+  --sidebar-ring: oklch(0.55 0.12 212 / 0.3);
+}
+
+@theme inline {
+  /* ... existing color mappings ... */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Updated to use Inter font which closely matches Apple's SF Pro */
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    /* Added Apple-like text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* Added Apple-inspired utility classes */
+@layer utilities {
+  .apple-blur {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  .apple-shadow {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  }
+
+  .apple-shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Added mobile-first responsive utilities */
+  .mobile-safe {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .mobile-header {
+    padding-top: max(0.5rem, env(safe-area-inset-top));
+  }
+
+  /* Enhanced smooth scrolling and touch interactions */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Apple-style button hover effects */
+  .apple-button {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .apple-button:hover {
+    transform: translateY(-1px);
+  }
+
+  .apple-button:active {
+    transform: translateY(0);
+  }
+}
+
+/* Added responsive breakpoint optimizations */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Enhanced touch targets for mobile */
+@media (max-width: 640px) {
+  button,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
